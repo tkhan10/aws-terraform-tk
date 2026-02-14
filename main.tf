@@ -3,5 +3,9 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "example" {
-  bucket = "my-example-bucket-12345"
+  bucket = "tkhan10-imc-terraform-${random_id.suffix.hex}"
+}
+
+resource "random_id" "suffix" {
+  byte_length = 4
 }
